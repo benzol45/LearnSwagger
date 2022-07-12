@@ -30,7 +30,7 @@ https://stackoverflow.com/questions/42863382/java-io-filenotfoundexception-class
         @ApiResponse(responseCode = "Какой код, например 200", description = "Что он значит"),
         @ApiResponse(responseCode = "Другой код, например 500", description = "Что он значит")
     })
-
+ApiResponses и ApiResponse импортируем из io.swagger.v3
 
 ### Изменение общего описания проекта в интерфейсе  
 см. класс SwaggerConfig - создаётся ApiInfo и передаётся в new Docket(DocumentationType.OAS_30)
