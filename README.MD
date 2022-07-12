@@ -43,6 +43,6 @@ https://stackoverflow.com/questions/42863382/java-io-filenotfoundexception-class
     .apis(RequestHandlerSelectors.basePackage("ПУТЬ ПАКЕТА, например com.baeldung.swaggerconf.controller"))
 
 ### Скрыть автоматически добавленные коды ответа  
-В конфиг Swagger к Docket добавлем
+В конфиг Swagger к Docket между select() и build() добавлем
 
     .useDefaultResponseMessages(false)
