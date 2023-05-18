@@ -3,6 +3,7 @@ https://www.baeldung.com/swagger-2-documentation-for-spring-rest-api#1-enabling-
 https://blog.mloza.pl/spring-boot-swagger-ui/
 
 ### АКТУАЛЬНОЕ  
+хорошая дока https://springdoc.org/#Introduction  
 https://stackoverflow.com/questions/37671125/how-to-configure-spring-security-to-allow-swagger-url-to-be-accessed-without-aut
 Если вы используете Spring Boot 3, вам нужно использовать: springdoc-openapi-starter-webmvc-uiкак написано во введении к документу.
 
