@@ -2,9 +2,35 @@
 https://www.baeldung.com/swagger-2-documentation-for-spring-rest-api#1-enabling-springfoxs-swagger-ui  
 https://blog.mloza.pl/spring-boot-swagger-ui/
 
-### Доступ
+### АКТУАЛЬНОЕ  
+https://stackoverflow.com/questions/37671125/how-to-configure-spring-security-to-allow-swagger-url-to-be-accessed-without-aut
+Если вы используете Spring Boot 3, вам нужно использовать: springdoc-openapi-starter-webmvc-uiкак написано во введении к документу.
 
+И используйте конфигурацию безопасности, что-то вроде этого:
+@Configuration
+@EnableWebSecurity
+@EnableMethodSecurity(securedEnabled = true, prePostEnabled = true, jsr250Enabled = true)
+@RequiredArgsConstructor
+public class SecurityConfiguration {
+   @Bean
+   public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+       return http
+               .csrf().disable()
+               .authorizeHttpRequests(a -> a
+                       .requestMatchers("/v3/**", "/swagger-ui/**").permitAll()
+                       .anyRequest().authenticated()
+               ).build();
+   }
+}
+Интерфейс Swagger:http://{your host}:{your port}/swagger-ui/index.html
+JSON:http://{your host}:{your port}/v3/api-docs
+ямл:http://{your host}:{your port}/v3/api-docs.yaml
+
+
+### Доступ
+http://localhost:8080/swagger-ui.html
 http://localhost:8080/swagger-ui/index.html
+
 
 ### Зависимости Maven 
 
